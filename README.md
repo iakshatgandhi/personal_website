@@ -45,9 +45,6 @@ I would be very happy to review your PRs and all the awesome things that you can
 - Next.js
 - TailwindCSS
 
-### Thanks
-
-If you liked this portfolio template, don't forget to give it a ⭐.
 
 
 
