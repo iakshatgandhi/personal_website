@@ -56,11 +56,6 @@ I would be very happy to review your PRs and all the awesome things that you can
 
 If you liked this portfolio template, don't forget to give it a ⭐.
 
-## Awesome Contributors
-
-## Supporting
-Many hours of hard work have gone into this project. Your support will be very appreciated!
-
 
 
 
