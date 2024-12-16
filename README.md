@@ -1,10 +1,3 @@
-### Live - 
-
-### Demo Video - 
-
-### Tutorials
-
-
 ### Features - 
 
 - Modern Stack (Next.js + TailwindCSS)
