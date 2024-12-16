@@ -1,9 +1,9 @@
 {
-  "name": "Akshat",
+  "name": "Akshat Gandhi",
   "headerTaglineOne": "Hello 👋",
-  "headerTaglineTwo": "I'm Akshat Gandhi - curious",
-  "headerTaglineThree": "designer and devloper",
-  "headerTaglineFour": " based in New Delhi, India.",
+  "headerTaglineTwo": "I'm Akshat Gandhi – a passionate software engineer and developer",
+  "headerTaglineThree": "Building innovative solutions with scalable systems and cutting-edge technologies",
+  "headerTaglineFour": "Based in Greater Noida, India, specializing in Full Stack Development",
   "showBlog": true,
   "darkMode": true,
   "socials": [
@@ -22,105 +22,103 @@
       "title": "Twitter",
       "link": "https://twitter.com/iakshatgandhi"
     },
-    { "id": "4", "title": "Blog", "link": "" },
-    { "id": "5", "title": "Email", "link": "iakshatgandhi@gmail.com" }
+    {
+      "id": "4",
+      "title": "Blog",
+      "link": ""
+    },
+    {
+      "id": "5",
+      "title": "Email",
+      "link": "iakshatgandhi@gmail.com"
+    }
   ],
   "projects": [
     {
       "id": "1",
-      "title": "Project One Test",
-      "description": "Web Design",
+      "title": "StudyNotion (EdTech Platform)",
+      "description": "A complete MERN stack solution for educators to create, sell, and manage online courses",
       "imageSrc": "https://images.unsplash.com/photo-1487837647815-bbc1f30cd0d2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Njl8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60",
-      "url": "http://chetanverma.com/"
+      "url": ""
     },
     {
       "id": "2",
-      "title": "Project Two",
-      "description": "Web Development",
+      "title": "N Queens Visualizer",
+      "description": "An interactive tool for visualizing the N-Queens problem with recursion and backtracking techniques",
       "imageSrc": "https://images.unsplash.com/photo-1605153864431-a2795a1b2f95?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXwyNTY3ODl8fGVufDB8fHw%3D&auto=format&fit=crop&w=400&q=60",
-      "url": "http://chetanverma.com/"
+      "url": ""
     },
     {
       "id": "3",
-      "title": "Project Three",
-      "description": "Design",
+      "title": "Tree Visualizer",
+      "description": "A dynamic visualization tool for various tree data structures, enhancing the learning experience with real-time interaction",
       "imageSrc": "https://images.unsplash.com/photo-1504083898675-c896ecdae86e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjJ8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60",
-      "url": "http://chetanverma.com/"
-    },
-    {
-      "id": "4",
-      "title": "Project Four",
-      "description": "Marketing",
-      "imageSrc": "https://images.unsplash.com/photo-1492171983775-a51717616c0d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NjB8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60",
-      "url": "http://chetanverma.com/"
-    },
-    {
-      "id": "5",
-      "title": "Project Five",
-      "description": "Development",
-      "imageSrc": "https://images.unsplash.com/photo-1534239143101-1b1c627395c5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NzZ8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60",
-      "url": "http://chetanverma.com/"
-    },
-    {
-      "id": "6",
-      "title": "Project Six",
-      "description": "Design & Development",
-      "imageSrc": "https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTAyfHxwYXN0ZWx8ZW58MHx8MHw%3D&auto=format&fit=crop&w=400&q=60",
-      "url": "http://chetanverma.com/"
+      "url": ""
     }
   ],
   "services": [
     {
       "id": "1",
-      "title": "Art Direction",
-      "description": "We help with the creation and development of online advertising ideas, with particular focus on their visual appearance."
+      "title": "Full Stack Development",
+      "description": "Transforming ideas into dynamic web applications using the MERN stack (MongoDB, Express, React, Node.js) and cutting-edge technologies. Focused on responsive design, intuitive user interfaces, and secure back-end services."
     },
     {
       "id": "2",
-      "title": "Branding",
-      "description": "We design key brand elements such as the logo, color scheme, typography, and other design components that makes your brand stand out from competitors."
+      "title": "Cloud Solutions & DevOps",
+      "description": "Leveraging AWS, Docker, and CI/CD pipelines for scalable and resilient cloud-based solutions. Expertise in containerization, automated workflows, and infrastructure as code (IaC) for seamless deployment."
     },
     {
       "id": "3",
-      "title": "Web Design",
-      "description": "We build and optimize your online presence.  Website is the digital entry point into your business and a powerful revenue channel."
+      "title": "Scalable System Design",
+      "description": "Designing highly scalable, reliable, and efficient systems using microservices architecture, message queues (Kafka, Redis), and real-time data processing technologies like WebSockets and WebRTC."
     },
     {
       "id": "4",
-      "title": "3D Design",
-      "description": "We combine creative design and technical skills to build striking 3D visualisations that bring your project to life."
+      "title": "API Development & Integration",
+      "description": "Building secure, fast, and robust RESTful APIs, ensuring seamless integration with front-end applications and third-party services. Optimizing performance with proper architecture and caching mechanisms."
+    },
+    {
+      "id": "5",
+      "title": "Performance Optimization & Security",
+      "description": "Ensuring optimal performance and security of your applications through techniques such as code splitting, DDoS protection, rate limiting, and database indexing. Aiming for low-latency and high-throughput systems."
     }
   ],
-  "aboutpara": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "aboutpara": "I'm Akshat Gandhi, a passionate Full Stack Developer with a deep love for building innovative web applications and scalable systems. Currently pursuing my B.Tech in Computer Science and Engineering at Galgotias University, I specialize in JavaScript, Node.js, AWS, and modern web frameworks. I have a strong foundation in backend technologies and system design, and I love solving complex problems with elegant solutions. My goal is to create software that not only performs well but is also user-friendly and secure. I'm constantly learning new technologies and approaches to stay at the forefront of development practices.",
   "resume": {
-    "tagline": "👋  I'm a software engineer, product designer, and maker.",
-    "description": "I have delivered world-class user experiences to millions of people. Well-versed with React, Javascript, and most of the Web frameworks.",
+    "tagline": "👋  I'm Akshat, a Full Stack Developer, System Designer, and Cloud Architect.",
+    "description": "With expertise in JavaScript, Node.js, React, and AWS, I specialize in designing scalable systems, optimizing performance, and integrating cloud solutions.",
     "experiences": [
       {
         "id": "1",
-        "dates": "March 2022 - Present",
-        "type": "Full Time",
-        "position": "Frontend Engineer at X",
+        "dates": "October 2022 - Present",
+        "type": "Internship",
+        "position": "Full Stack Developer Intern at Coincent.ai",
         "bullets": [
-          "Worked on the frontend of a React application",
-          "Worked on the frontend of a React application"
+          "Developed dynamic and responsive web applications using the MERN stack.",
+          "Optimized API performance for faster data retrieval and interaction.",
+          "Worked on deploying applications on AWS, setting up CI/CD pipelines for automated deployments."
         ]
       },
       {
         "id": "2",
-        "dates": "March 2020 - March 2022",
-        "type": "Full Time",
-        "position": "Frontend Engineer at X",
-        "bullets": ["Worked on the frontend of a React application"]
+        "dates": "March 2022 - October 2022",
+        "type": "Freelance",
+        "position": "Full Stack Developer",
+        "bullets": [
+          "Built and optimized several web applications from scratch for clients.",
+          "Integrated cloud services like AWS S3 for media storage and AWS EC2 for hosting.",
+          "Implemented best practices for security and performance in web applications."
+        ]
       }
     ],
     "education": {
-      "universityName": "University X",
-      "universityDate": "2016-2020",
-      "universityPara": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+      "universityName": "Galgotias University",
+      "universityDate": "2021 - 2025",
+      "universityPara": "Currently pursuing a B.Tech in Computer Science and Engineering with a focus on Full Stack Development, Cloud Computing, and Advanced System Design."
     },
-    "languages": ["Javascript", "HTML5", "CSS", "Python"],
-    "frameworks": ["React", "Typescript", "NodeJs"],
-    "others": ["Figma", "AdobeXD", "AWS"]
+    "languages": ["JavaScript", "C++", "Python", "Java", "SQL"],
+    "frameworks": ["React", "Node.js", "Express", "Next.js", "MongoDB", "PostgreSQL", "AWS", "Docker", "GraphQL"],
+    "tools": ["Git", "VS Code", "AWS Cloud", "Docker", "Kubernetes", "CI/CD"],
+    "others": ["Figma", "Adobe XD", "Postman", "Swagger"]
   }
 }
