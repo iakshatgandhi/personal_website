@@ -77,7 +77,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                   {showResume && (
                     <Button
                       onClick={() =>
-                        window.open("https://drive.google.com/file/d/1DgYtjzChcev4IA_a-Z33IjiYmp6hR0ZC/view?usp=drive_link")
+                        window.open("https://drive.google.com/file/d/1DgYtjzChcev4IA_a-Z33IjiYmp6hR0ZC/view?usp=sharing")
                       }
                     >
                       Resume
