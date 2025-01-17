@@ -40,14 +40,14 @@
         "id": "1",
         "title": "Fraudulent News Detection/Classification",
         "description": "This project utilizes natural language processing (NLP) and machine learning algorithms to classify news articles as real or fake. It features a user-friendly web interface built with Streamlit for effortless interaction.",
-        "imageSrc": "https://drive.google.com/uc?export=view&id=1he2ChrUyAornx-hLb6ZPNzdKONoiwqea",
+        "imageSrc": "./data/images/app.png",
         "url": "https://github.com/iakshatgandhi/Fake-News-Classification-Model-main"
       },
       {
         "id": "2",
         "title": "Tree Visualizer",
         "description": "A dynamic visualization tool for various tree data structures, enhancing the learning experience with real-time interaction",
-        "imageSrc": "https://drive.google.com/uc?export=view&id=1hMrtNTFjVD_1Rtypn8-LNZuuqvQzGUaC",
+        "imageSrc": "./data/images/tree_visual.jpeg",
         "url": "https://github.com/iakshatgandhi/Tree-Visualizer-main"
       }
     ],
