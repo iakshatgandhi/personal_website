@@ -34,14 +34,7 @@
     }
   ],
   "projects": [
-    
-    // {
-//       "id": "1",
-//       "title": "OneLearn (EdTech Platform)", 
-//       "description": "A complete MERN stack solution for educators to create, sell, and manage online courses",
-//       "imageSrc": "https://images.unsplash.com/photo-1487837647815-bbc1f30cd0d2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Njl8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60",
-//       "url": ""
-//     },    
+      
     {
       "id": "1",
       "title": "Fraudulent News Detection/Classification",
@@ -50,10 +43,10 @@
       "url": "https://github.com/iakshatgandhi/Fake-News-Classification-Model-main"
     },
     {
-      "id": "3",
+      "id": "2",
       "title": "Tree Visualizer",
       "description": "A dynamic visualization tool for various tree data structures, enhancing the learning experience with real-time interaction",
-      "imageSrc": "https://images.unsplash.com/photo-1504083898675-c896ecdae86e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjJ8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60",
+      "imageSrc": "https://drive.google.com/file/d/1hMrtNTFjVD_1Rtypn8-LNZuuqvQzGUaC/view?usp=sharing",
       "url": "https://github.com/iakshatgandhi/Tree-Visualizer-main"
     }
   ],
