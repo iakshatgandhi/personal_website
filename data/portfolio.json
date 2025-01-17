@@ -38,23 +38,16 @@
     "projects": [
       {
         "id": "1",
-        "title": "OneLearn (EdTech Platform)",
-        "description": "A MERN stack solution enabling instructors to publish, manage, and sell courses, enhancing the online education experience.",
-        "imageSrc": "https://images.unsplash.com/photo-1487837647815-bbc1f30cd0d2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Njl8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60",
-        "url": ""
+        "title": "Fraudulent News Detection/Classification",
+        "description": "This project utilizes natural language processing (NLP) and machine learning algorithms to classify news articles as real or fake. It features a user-friendly web interface built with Streamlit for effortless interaction.",
+        "imageSrc": "https://drive.google.com/file/d/1he2ChrUyAornx-hLb6ZPNzdKONoiwqea/view?usp=sharing",
+        "url": "https://github.com/iakshatgandhi/Fake-News-Classification-Model-main"
       },
       {
         "id": "2",
-        "title": "N Queens Visualizer",
-        "description": "A tool built to visualize the N-Queens problem using recursion and backtracking, with interactive visualizations.",
-        "imageSrc": "https://images.unsplash.com/photo-1605153864431-a2795a1b2f95?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXwyNTY3ODl8fGVufDB8fHw%3D&auto=format&fit=crop&w=400&q=60",
-        "url": ""
-      },
-      {
-        "id": "3",
         "title": "Tree Visualizer",
-        "description": "An interactive tool for visualizing binary trees, binary search trees, and max-heap trees, designed to make learning data structures engaging.",
-        "imageSrc": "https://images.unsplash.com/photo-1504083898675-c896ecdae86e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjJ8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60",
+        "description": "A dynamic visualization tool for various tree data structures, enhancing the learning experience with real-time interaction",
+        "imageSrc": "https://drive.google.com/file/d/1hMrtNTFjVD_1Rtypn8-LNZuuqvQzGUaC/view?usp=sharing",
         "url": "https://github.com/iakshatgandhi/Tree-Visualizer-main"
       }
     ],
