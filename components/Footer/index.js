@@ -5,7 +5,7 @@ import Button from "../Button";
 import ScheduleCall from "./scheduleCall";
 
 const Footer = () => {
-  const [showSchedule, setShowSchedule] = useState(false);
+  const [showSchedule, setShowScheduleModal] = useState(false);
 
   return (
     <>
