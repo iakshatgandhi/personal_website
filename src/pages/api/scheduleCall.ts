@@ -3,29 +3,41 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { z } from 'zod';
 import nodemailer from 'nodemailer';
 import { PrismaClient } from "@prisma/client";
+import rateLimit from 'express-rate-limit';
 
-// Initialize Prisma client
-const prisma = new PrismaClient();
+// Initialize Prisma client as singleton
+const globalForPrisma = globalThis as unknown as { prisma: PrismaClient };
+export const prisma = globalForPrisma.prisma || new PrismaClient();
+if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma;
 
-// Validation schema
+// Enhanced validation schema
 const ScheduleCallSchema = z.object({
-  name: z.string().min(1, "Name is required"),
-  email: z.string().email("Invalid email address"),
+  name: z.string().min(1, "Name is required").max(100, "Name is too long"),
+  email: z.string().email("Invalid email address").max(255),
   selectedDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "Invalid date format"),
   selectedTime: z.string().regex(/^(0[9]|1[0-1]):00 AM|(0[2-4]):00 PM$/, "Invalid time format"),
-  message: z.string().optional()
+  message: z.string().max(1000, "Message is too long").optional(),
 });
 
-// Email configuration
-const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: parseInt(process.env.SMTP_PORT || '587'),
-  secure: false,
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASSWORD,
-  },
+// Rate limiting
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 5 // limit each IP to 5 requests per windowMs
 });
+
+// Email configuration with retry logic
+const createTransporter = () => {
+  const transporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST,
+    port: parseInt(process.env.SMTP_PORT || '587'),
+    secure: process.env.SMTP_SECURE === 'true',
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASSWORD,
+    },
+  });
+  return transporter;
+};
 
 export default async function handler(
   req: NextApiRequest,
@@ -35,53 +47,77 @@ export default async function handler(
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
+  // Apply rate limiting
+  await new Promise((resolve) => limiter(req, res, resolve));
+
   try {
-    // Validate request body
     const validatedData = ScheduleCallSchema.parse(req.body);
     
-    // Convert time string to 24-hour format for DB
-    const time24h = convertTo24Hour(validatedData.selectedTime);
-    
-    // Combine date and time into ISO string
-    const scheduledDateTime = new Date(
-      `${validatedData.selectedDate}T${time24h}`
+    // Validate date is not in the past
+    const currentDate = new Date();
+    const selectedDateTime = new Date(
+      `${validatedData.selectedDate}T${convertTo24Hour(validatedData.selectedTime)}`
     );
-
-    // Check if the slot is available
-    const existingBooking = await prisma.callBooking.findFirst({
-      where: {
-        scheduledAt: scheduledDateTime,
-      },
-    });
-
-    if (existingBooking) {
-      return res.status(409).json({ 
-        error: 'This time slot is no longer available' 
-      });
+    
+    if (selectedDateTime < currentDate) {
+      return res.status(400).json({ error: 'Cannot schedule calls in the past' });
     }
 
-    // Create booking in database
-    const booking = await prisma.callBooking.create({
-      data: {
-        name: validatedData.name,
-        email: validatedData.email,
-        scheduledAt: scheduledDateTime,
-        message: validatedData.message || '',
-        status: 'SCHEDULED'
-      },
+    // Check if within business hours (9 AM - 4 PM)
+    const hour = selectedDateTime.getHours();
+    if (hour < 9 || hour > 16) {
+      return res.status(400).json({ error: 'Selected time must be within business hours' });
+    }
+
+    // Transaction to ensure data consistency
+    const booking = await prisma.$transaction(async (tx) => {
+      // Check for existing booking
+      const existingBooking = await tx.callBooking.findFirst({
+        where: {
+          scheduledAt: selectedDateTime,
+          status: 'SCHEDULED',
+        },
+      });
+
+      if (existingBooking) {
+        throw new Error('Time slot already booked');
+      }
+
+      return tx.callBooking.create({
+        data: {
+          name: validatedData.name,
+          email: validatedData.email,
+          scheduledAt: selectedDateTime,
+          message: validatedData.message || '',
+          status: 'SCHEDULED'
+        },
+      });
     });
 
-    // Send confirmation emails
+    // Send emails with retry logic
+    const transporter = createTransporter();
+    const maxRetries = 3;
+    
+    const sendEmailWithRetry = async (mailOptions: any, retryCount = 0) => {
+      try {
+        await transporter.sendMail(mailOptions);
+      } catch (error) {
+        if (retryCount < maxRetries) {
+          await new Promise(resolve => setTimeout(resolve, 1000 * (retryCount + 1)));
+          return sendEmailWithRetry(mailOptions, retryCount + 1);
+        }
+        throw error;
+      }
+    };
+
     await Promise.all([
-      // Send to customer
-      transporter.sendMail({
+      sendEmailWithRetry({
         from: process.env.EMAIL_FROM,
         to: validatedData.email,
         subject: 'Call Scheduled - Confirmation',
         html: generateCustomerEmail(booking),
       }),
-      // Send to admin
-      transporter.sendMail({
+      sendEmailWithRetry({
         from: process.env.EMAIL_FROM,
         to: process.env.ADMIN_EMAIL,
         subject: 'New Call Booking',
@@ -101,6 +137,9 @@ export default async function handler(
         error: 'Validation failed', 
         details: error.errors 
       });
+    }
+    if (error.message === 'Time slot already booked') {
+      return res.status(409).json({ error: 'This time slot is no longer available' });
     }
     return res.status(500).json({ 
       error: 'Failed to schedule call' 

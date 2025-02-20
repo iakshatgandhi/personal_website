@@ -33,7 +33,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      {showSchedule && <ScheduleCall onClose={() => setShowSchedule(false)} />}
+      {showSchedule && <ScheduleCall onClose={() => setShowScheduleModal(false)} />}
       <h1 className="text-sm font-bold mt-2 laptop:mt-10 p-2 laptop:p-0">
         Made With ❤ by{" "}
         <Link href="https://linktr.ee/akshatgandhi?fbclid=PAZXh0bgNhZW0CMTEAAabSJyR7yW0le_4hKVT08CBUQ97vvgCzbPqIogm4K_341FDk0kAhRhgx3Wc_aem_RXtDMsviIdTrG9ljnrMMcA">
