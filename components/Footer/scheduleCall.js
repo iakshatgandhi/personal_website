@@ -32,28 +32,28 @@ const ScheduleCall = ({ onClose }) => {
       setError('Please fill in all required fields.');
       return false;
     }
-  
+
     // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       setError('Please enter a valid email address.');
       return false;
     }
-  
+
     // Validate date format
     const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
     if (!dateRegex.test(formData.selectedDate)) {
       setError('Invalid date format.');
       return false;
     }
-  
+
     const selectedDateTime = new Date(`${formData.selectedDate}T${formData.selectedTime}`);
     const now = new Date();
     if (selectedDateTime <= now) {
       setError('Please select a future date and time.');
       return false;
     }
-  
+
     return true;
   };
 
@@ -224,6 +224,5 @@ const ScheduleCall = ({ onClose }) => {
     </div>
   );
 };
-
 
 export default ScheduleCall;
